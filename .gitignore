@@ -1,0 +1,48 @@
+## generic files to ignore
+*~
+*.DS_Store
+*.swp
+*.out
+.sonar/
+*.war
+.svn/
+
+#xcode specific
+build/
+DerivedData/
+*.pbxuser
+*.mode2v3
+*.mode1v3
+*.perspective
+*.perspectivev3
+*~.nib
+*.ipa
+
+# cocoapods
+Pods/
+
+#ignore private workspace stuff added by Xcode4
+xcuserdata
+*.xcscmblueprint
+*.xccheckout
+
+
+# fastlane specific
+fastlane/report.xml
+
+# deliver temporary files
+fastlane/Preview.html
+
+# snapshot generated screenshots
+fastlane/screenshots
+
+# scan temporary files
+fastlane/test_output
+
+# generated readme
+fastlane/README.md
+
+
+# bundler
+.bundle
+/bin

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Pn-2J-4Ak">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reddit-->
+        <scene sceneID="goc-HH-2pU">
+            <objects>
+                <tableViewController id="xLy-Gl-qir" customClass="PostsViewController" customModule="Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z2t-RZ-nHp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="cwt-w6-Kyl">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Vqo-ex-NGn">
+                                    <rect key="frame" x="12" y="12" width="390" height="40"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a subreddit…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejc-OG-iUc">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="40"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="xLy-Gl-qir" id="lzP-No-zfm"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Vqo-ex-NGn" firstAttribute="leading" secondItem="cwt-w6-Kyl" secondAttribute="leading" constant="12" id="AXK-HA-vZa"/>
+                                <constraint firstAttribute="trailing" secondItem="Vqo-ex-NGn" secondAttribute="trailing" constant="12" id="Jik-PG-Buf"/>
+                                <constraint firstItem="Vqo-ex-NGn" firstAttribute="top" secondItem="cwt-w6-Kyl" secondAttribute="top" constant="12" id="xbW-Cb-MSu"/>
+                                <constraint firstAttribute="bottom" secondItem="Vqo-ex-NGn" secondAttribute="bottom" id="ycT-gX-tKy"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="zQt-11-bkw">
+                            <rect key="frame" x="0.0" y="145" width="414" height="52"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pPG-Fq-zfu">
+                                    <rect key="frame" x="197" y="16" width="20" height="20"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts found." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYd-V6-vZe">
+                                    <rect key="frame" x="146" y="15.5" width="122" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="LYd-V6-vZe" firstAttribute="centerY" secondItem="zQt-11-bkw" secondAttribute="centerY" id="Nlo-co-sjf"/>
+                                <constraint firstItem="pPG-Fq-zfu" firstAttribute="centerY" secondItem="zQt-11-bkw" secondAttribute="centerY" id="O8l-wa-o1C"/>
+                                <constraint firstItem="pPG-Fq-zfu" firstAttribute="centerX" secondItem="zQt-11-bkw" secondAttribute="centerX" id="e5t-iH-dRv"/>
+                                <constraint firstItem="LYd-V6-vZe" firstAttribute="centerX" secondItem="zQt-11-bkw" secondAttribute="centerX" id="vRu-F3-Hq5"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostItemCell" rowHeight="65" id="GPI-Dp-Itz" customClass="PostItemCell" customModule="Reddit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="80" width="414" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GPI-Dp-Itz" id="71s-HY-2qJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OAI-VD-gNU">
+                                            <rect key="frame" x="12" y="12" width="390" height="41"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="r/news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eys-Xg-2wa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="16.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="We landed on the moon!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Th-yV-zhg">
+                                                    <rect key="frame" x="0.0" y="20.5" width="390" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-9b-JJN" userLabel="Divider">
+                                            <rect key="frame" x="12" y="64.5" width="402" height="0.5"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="Pih-WS-XLl"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OAI-VD-gNU" firstAttribute="leading" secondItem="71s-HY-2qJ" secondAttribute="leading" constant="12" id="1A1-Bu-GBc"/>
+                                        <constraint firstItem="OAI-VD-gNU" firstAttribute="top" secondItem="71s-HY-2qJ" secondAttribute="top" constant="12" id="HK5-PX-xft"/>
+                                        <constraint firstAttribute="trailing" secondItem="EyS-9b-JJN" secondAttribute="trailing" id="Teb-72-8r4"/>
+                                        <constraint firstAttribute="bottom" secondItem="OAI-VD-gNU" secondAttribute="bottom" constant="12" id="iBA-oF-KnQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="OAI-VD-gNU" secondAttribute="trailing" constant="12" id="kxL-Sr-kO6"/>
+                                        <constraint firstAttribute="bottom" secondItem="EyS-9b-JJN" secondAttribute="bottom" id="peG-w1-xgT"/>
+                                        <constraint firstItem="EyS-9b-JJN" firstAttribute="leading" secondItem="71s-HY-2qJ" secondAttribute="leading" constant="12" id="xgo-Sr-lhe"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailLabel" destination="Eys-Xg-2wa" id="hyD-G6-lbk"/>
+                                    <outlet property="titleLabel" destination="9Th-yV-zhg" id="bJc-aE-r45"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xLy-Gl-qir" id="p4O-P2-eCb"/>
+                            <outlet property="delegate" destination="xLy-Gl-qir" id="BCn-ub-Hq9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Reddit" leftItemsSupplementBackButton="YES" id="5wT-HF-OsN"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="pPG-Fq-zfu" id="wc6-ic-boh"/>
+                        <outlet property="emptyStateLabel" destination="LYd-V6-vZe" id="9p2-P1-L9H"/>
+                        <outlet property="textField" destination="ejc-OG-iUc" id="BfS-en-nAA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waQ-x0-Dgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k0b-vg-zdM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Pn-2J-4Ak" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="9Fo-Zd-heW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xLy-Gl-qir" kind="relationship" relationship="rootViewController" id="C7c-Q6-fXe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Md5-gC-Y3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="21"/>
+        </scene>
+    </scenes>
+</document>
