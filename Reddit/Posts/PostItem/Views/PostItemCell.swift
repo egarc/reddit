@@ -30,6 +30,29 @@ final class PostItemCell: UITableViewCell {
 
     @IBOutlet var detailLabel: UILabel?
 
+    @IBOutlet var favoriteButton: UIButton?
+
+    // MARK: -
+    // MARK: IBActions
+
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        viewModel?.postItemViewModelDidTapFavoriteButton()
+    }
+
+    // MARK: -
+    // MARK: Overrides
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        let image = UIImage(named: "heart")?.withRenderingMode(.alwaysTemplate)
+        favoriteButton?.setImage(image, for: .normal)
+    }
+
+    override func prepareForReuse() {
+        viewModel = nil
+    }
+
 }
 
 // MARK: -
@@ -40,6 +63,7 @@ private extension PostItemCell {
     func render(state: PostItemState?) {
         titleLabel?.text = state?.title
         detailLabel?.text = state?.detail
+        favoriteButton?.tintColor = (state?.favorite ?? false) ? .red : .darkGray
     }
 
 }

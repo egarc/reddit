@@ -1,25 +1,14 @@
 //
-//  PostsViewModelProtocol.swift
+//  FavoritesViewModelProtocol.swift
 //  Reddit
 //
-//  Created by Eric Garcia on 5/18/19.
+//  Created by Eric Garcia on 5/22/19.
 //  Copyright © 2019 Eric Garcia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol PostsViewModelProtocol {
-
-    /// Fetches the front page.
-    func fetchFrontPage()
-
-    /// Fetches the first page of the given subreddit.
-    ///
-    /// - Parameter subreddit: A subreddit name.
-    func fetchPosts(from subreddit: String)
-
-    /// Refreshes the current posts.
-    func refreshPosts()
+protocol FavoritesViewModelProtocol {
 
     /// Fetches the favorite posts.
     func fetchFavorites()
@@ -37,3 +26,4 @@ protocol PostsViewModelProtocol {
     func itemViewModel(at indexPath: IndexPath) -> PostItemViewModelProtocol
 
 }
+

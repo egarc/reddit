@@ -17,22 +17,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let storyboard = UIStoryboard(name: "PostsViewController", bundle: Bundle(for: PostsViewController.self))
-        let store = PostsStore(initialState: PostsState())
-        let vm = PostsViewModel(store: store)
-        let nc = storyboard.instantiateInitialViewController() as! UINavigationController
-        let vc = nc.viewControllers.first as! PostsViewController
-        vc.viewModel = vm
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: PostsViewController.self))
 
-        store.delegate = vm
-        vm.delegate = vc
+        // Posts
+        let favoritesStore = FavoritesStore()
+        let postsStore = PostsStore(favoritesStore: favoritesStore)
+        let postsViewModel = PostsViewModel(store: postsStore)
+        let tabBarController = storyboard.instantiateInitialViewController() as! UITabBarController
+        let postsViewController = tabBarController.viewControllers?.first as! PostsViewController
+        postsViewController.viewModel = postsViewModel
+
+        postsStore.delegate = postsViewModel
+        favoritesStore.delegate = postsStore
+        postsViewModel.delegate = postsViewController
+
+        // Favorites
+        // TODO: Switch to subscription and we can reuse the first favorites store
+        let anotherFavoritesStore = FavoritesStore()
+        let favoritesViewModel = FavoritesViewModel(store: anotherFavoritesStore)
+        let favoritesViewController = tabBarController.viewControllers?[1] as! FavoritesViewController
+        favoritesViewController.viewModel = favoritesViewModel
+
+        anotherFavoritesStore.delegate = favoritesViewModel
+        favoritesViewModel.delegate = favoritesViewController
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
-        window.rootViewController = nc
+        window.rootViewController = tabBarController
 
         self.window = window
-        self.store = store
+        self.store = postsStore
 
         return true
     }

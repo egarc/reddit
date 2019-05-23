@@ -16,6 +16,9 @@ struct PostsState {
     /// The page request state.
     var requestState: NetworkRequestState<Post> = .idle
 
+    /// The keys of favorite posts.
+    var favorites: [String]?
+
 }
 
 // MARK: -
@@ -26,6 +29,7 @@ extension PostsState: Equatable {
     static func ==(lhs: PostsState, rhs: PostsState) -> Bool {
         return lhs.subreddit == rhs.subreddit
             && lhs.requestState == rhs.requestState
+            && lhs.favorites == rhs.favorites
     }
 
 }

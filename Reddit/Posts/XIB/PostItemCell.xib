@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostItemCell" rowHeight="65" id="OWr-un-mAm" customClass="PostItemCell" customModule="Reddit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OWr-un-mAm" id="L8U-FQ-dzh">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMQ-Zz-lc1">
+                        <rect key="frame" x="12" y="12" width="390" height="40"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ld9-af-nns">
+                                <rect key="frame" x="0.0" y="0.0" width="346" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="r/news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbY-Kf-uTg">
+                                        <rect key="frame" x="0.0" y="0.0" width="346" height="15.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="We landed on the moon!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBv-Vk-6ZK">
+                                        <rect key="frame" x="0.0" y="19.5" width="346" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="GJH-t8-85P">
+                                <rect key="frame" x="346" y="0.0" width="44" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhN-Eb-j45">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="YGT-kW-72j"/>
+                                            <constraint firstAttribute="width" constant="44" id="yA5-j8-fNO"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="30"/>
+                                        <state key="normal" image="heart"/>
+                                        <connections>
+                                            <action selector="favoriteButtonTapped:" destination="OWr-un-mAm" eventType="touchUpInside" id="ptP-bU-taU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="MiS-Mq-m8U"/>
+                                    <constraint firstItem="fhN-Eb-j45" firstAttribute="leading" secondItem="GJH-t8-85P" secondAttribute="leading" id="aj9-li-V7P"/>
+                                    <constraint firstAttribute="trailing" secondItem="fhN-Eb-j45" secondAttribute="trailing" id="x1d-Hy-Rnp"/>
+                                    <constraint firstItem="fhN-Eb-j45" firstAttribute="top" secondItem="GJH-t8-85P" secondAttribute="top" id="xRG-oK-d4K"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkW-7J-eDn" userLabel="Divider">
+                        <rect key="frame" x="12" y="64" width="402" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="11z-Aa-hMD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="RkW-7J-eDn" secondAttribute="bottom" id="0Ja-W7-B40"/>
+                    <constraint firstItem="RkW-7J-eDn" firstAttribute="leading" secondItem="L8U-FQ-dzh" secondAttribute="leading" constant="12" id="24w-hv-rqG"/>
+                    <constraint firstItem="mMQ-Zz-lc1" firstAttribute="top" secondItem="L8U-FQ-dzh" secondAttribute="top" constant="12" id="E1I-vH-BC3"/>
+                    <constraint firstItem="mMQ-Zz-lc1" firstAttribute="leading" secondItem="L8U-FQ-dzh" secondAttribute="leading" constant="12" id="UZA-2y-RfF"/>
+                    <constraint firstItem="RkW-7J-eDn" firstAttribute="top" secondItem="mMQ-Zz-lc1" secondAttribute="bottom" constant="12" id="afR-qw-vk5"/>
+                    <constraint firstAttribute="trailing" secondItem="RkW-7J-eDn" secondAttribute="trailing" id="wIP-yE-snB"/>
+                    <constraint firstAttribute="trailing" secondItem="mMQ-Zz-lc1" secondAttribute="trailing" constant="12" id="zbN-oM-PfV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="HbY-Kf-uTg" id="AgR-w0-QGh"/>
+                <outlet property="favoriteButton" destination="fhN-Eb-j45" id="XFf-NZ-bOo"/>
+                <outlet property="titleLabel" destination="DBv-Vk-6ZK" id="lJZ-3z-zNa"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart" width="27" height="25"/>
+    </resources>
+</document>

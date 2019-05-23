@@ -1,29 +1,27 @@
 //
-//  TableViewController.swift
-//  reddit
+//  FavoritesViewController.swift
+//  Reddit
 //
-//  Created by Eric Garcia on 5/17/19.
+//  Created by Eric Garcia on 5/22/19.
 //  Copyright © 2019 Eric Garcia. All rights reserved.
 //
 
 import UIKit
 import SafariServices
 
-class PostsViewController: UITableViewController {
+class FavoritesViewController: UITableViewController {
 
     // MARK: -
     // MARK: Public Properties
 
-    var viewModel: PostsViewModel?
+    var viewModel: FavoritesViewModelProtocol?
 
     // MARK: -
     // MARK: View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
-        viewModel?.fetchFrontPage()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,28 +29,12 @@ class PostsViewController: UITableViewController {
         viewModel?.fetchFavorites()
     }
 
-    // MARK: -
-    // MARK: IBOutlets
-
-    @IBOutlet var textField: UITextField?
-
-    @IBOutlet var activityIndicatorView: UIActivityIndicatorView?
-
-    @IBOutlet var emptyStateLabel: UILabel?
-
-    // MARK: -
-    // MARK: IBActions
-    
-    @objc func refreshPosts() {
-        viewModel?.refreshPosts()
-    }
-
 }
 
 // MARK: -
 // MARK: UITableViewDataSource
 
-extension PostsViewController {
+extension FavoritesViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.numberOfItems(inSection: 0) ?? 0
@@ -73,7 +55,7 @@ extension PostsViewController {
 // MARK: -
 // MARK: UITableViewDelegate
 
-extension PostsViewController {
+extension FavoritesViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
@@ -92,18 +74,13 @@ extension PostsViewController {
 // MARK: -
 // MARK: Views and Constraints
 
-private extension PostsViewController {
+private extension FavoritesViewController {
 
     /// Perform any additional one-time view setup after the view has loaded.
     func setupView() {
         tableView.register(
             UINib(nibName: "PostItemCell", bundle: .main),
             forCellReuseIdentifier: PostItemCell.reuseIdentifier)
-
-        definesPresentationContext = true
-
-        tableView.refreshControl = UIRefreshControl()
-        tableView.refreshControl?.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
 
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
@@ -112,35 +89,12 @@ private extension PostsViewController {
 }
 
 // MARK: -
-// MARK: UITextFieldDelegate
+// MARK: FavoritesViewModelDelegate
 
-extension PostsViewController: UITextFieldDelegate {
+extension FavoritesViewController: FavoritesViewModelDelegate {
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        viewModel?.fetchPosts(from: textField.text ?? "")
-        textField.resignFirstResponder()
-        return true
-    }
-
-}
-
-// MARK: -
-// MARK: PostsViewModelDelegate
-
-extension PostsViewController: PostsViewModelDelegate {
-
-    func didUpdateWithState(_ state: PostsViewState) {
-        if state.isLoading {
-            activityIndicatorView?.startAnimating()
-            tableView.refreshControl?.beginRefreshing()
-        } else {
-            activityIndicatorView?.stopAnimating()
-            tableView.refreshControl?.endRefreshing()
-        }
+    func didUpdateWithState(_ state: FavoritesViewState) {
         tableView.reloadData()
-
-        emptyStateLabel?.isHidden = state.cellViewModels.count != 0 || state.isLoading
     }
 
 }
-

@@ -51,11 +51,15 @@ extension PostsViewModel: PostsViewModelProtocol {
         store.refreshPosts()
     }
 
+    func fetchFavorites() {
+        store.fetchFavorites()
+    }
+
     func numberOfItems(inSection section: Int) -> Int {
         return viewState.cellViewModels.count
     }
 
-    func itemViewModel(at indexPath: IndexPath) -> PostItemViewModel {
+    func itemViewModel(at indexPath: IndexPath) -> PostItemViewModelProtocol {
         return viewState.cellViewModels[indexPath.row]
     }
 
@@ -69,7 +73,11 @@ extension PostsViewModel: PostsStoreDelegate {
     func didUpdateWithState(_ state: PostsState) {
         let showAuthor = !(state.subreddit?.isEmpty ?? true)
         let cellViewModels = state.requestState.items?.compactMap {
-            PostItemViewModel(post: $0, showAuthor: showAuthor)
+            PostItemViewModel(
+                post: $0,
+                showAuthor: showAuthor,
+                favorite: state.favorites?.contains($0.id) ?? false,
+                delegate: self)
         }
 
         self.viewState = PostsViewState(
@@ -77,6 +85,17 @@ extension PostsViewModel: PostsStoreDelegate {
             isLoading: state.requestState == .loading)
         
         delegate?.didUpdateWithState(self.viewState)
+    }
+
+}
+
+// MARK: -
+// MARK: PostItemViewModelDelegate
+
+extension PostsViewModel: PostItemViewModelDelegate {
+
+    func postItemViewModelDidTapFavoriteButton(with post: Post) {
+        store.toggleFavorite(for: post)
     }
 
 }

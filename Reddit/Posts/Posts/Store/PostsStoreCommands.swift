@@ -16,4 +16,12 @@ protocol PostsStoreCommands {
     /// Refreshes the current posts.
     func refreshPosts()
 
+    /// Fetches the favorite posts.
+    func fetchFavorites()
+
+    /// Toggles favorite for a post.
+    ///
+    /// - Parameter post: A post.
+    func toggleFavorite(for post: Post)
+
 }

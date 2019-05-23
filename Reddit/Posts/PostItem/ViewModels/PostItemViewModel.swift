@@ -9,18 +9,35 @@
 final class PostItemViewModel: PostItemViewModelProtocol {
 
     // MARK: -
+    // MARK: Private Properties
+
+    private let post: Post
+
+    // MARK: -
     // MARK: Public Properties
+
+    weak var delegate: PostItemViewModelDelegate?
 
     let state: PostItemState
 
     // MARK: -
     // MARK: Initialization
 
-    init(post: Post, showAuthor: Bool) {
+    init(post: Post, showAuthor: Bool, favorite: Bool, delegate: PostItemViewModelDelegate) {
+        self.post = post
+        self.delegate = delegate
         self.state = PostItemState(
             title: post.title,
             detail: showAuthor ? post.author : post.subreddit,
-            url: post.url)
+            url: post.url,
+            favorite: favorite)
+    }
+
+    // MARK: -
+    // MARK: PostItemViewModelProtocol
+
+    func postItemViewModelDidTapFavoriteButton() {
+        delegate?.postItemViewModelDidTapFavoriteButton(with: post)
     }
 
 }

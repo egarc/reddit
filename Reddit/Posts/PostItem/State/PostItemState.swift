@@ -17,4 +17,7 @@ struct PostItemState {
     /// The URL of the post content.
     let url: String
 
+    /// True if the post has been favorited.
+    let favorite: Bool
+
 }

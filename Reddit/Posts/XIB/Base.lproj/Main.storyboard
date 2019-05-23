@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Pn-2J-4Ak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NKI-mL-jr9">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,10 +45,10 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="zQt-11-bkw">
-                            <rect key="frame" x="0.0" y="145" width="414" height="52"/>
+                            <rect key="frame" x="0.0" y="52" width="414" height="52"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pPG-Fq-zfu">
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pPG-Fq-zfu">
                                     <rect key="frame" x="197" y="16" width="20" height="20"/>
                                 </activityIndicatorView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts found." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYd-V6-vZe">
@@ -66,60 +66,12 @@
                                 <constraint firstItem="LYd-V6-vZe" firstAttribute="centerX" secondItem="zQt-11-bkw" secondAttribute="centerX" id="vRu-F3-Hq5"/>
                             </constraints>
                         </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostItemCell" rowHeight="65" id="GPI-Dp-Itz" customClass="PostItemCell" customModule="Reddit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="80" width="414" height="65"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GPI-Dp-Itz" id="71s-HY-2qJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OAI-VD-gNU">
-                                            <rect key="frame" x="12" y="12" width="390" height="41"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="r/news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eys-Xg-2wa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="16.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="We landed on the moon!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Th-yV-zhg">
-                                                    <rect key="frame" x="0.0" y="20.5" width="390" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-9b-JJN" userLabel="Divider">
-                                            <rect key="frame" x="12" y="64.5" width="402" height="0.5"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="0.5" id="Pih-WS-XLl"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="OAI-VD-gNU" firstAttribute="leading" secondItem="71s-HY-2qJ" secondAttribute="leading" constant="12" id="1A1-Bu-GBc"/>
-                                        <constraint firstItem="OAI-VD-gNU" firstAttribute="top" secondItem="71s-HY-2qJ" secondAttribute="top" constant="12" id="HK5-PX-xft"/>
-                                        <constraint firstAttribute="trailing" secondItem="EyS-9b-JJN" secondAttribute="trailing" id="Teb-72-8r4"/>
-                                        <constraint firstAttribute="bottom" secondItem="OAI-VD-gNU" secondAttribute="bottom" constant="12" id="iBA-oF-KnQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="OAI-VD-gNU" secondAttribute="trailing" constant="12" id="kxL-Sr-kO6"/>
-                                        <constraint firstAttribute="bottom" secondItem="EyS-9b-JJN" secondAttribute="bottom" id="peG-w1-xgT"/>
-                                        <constraint firstItem="EyS-9b-JJN" firstAttribute="leading" secondItem="71s-HY-2qJ" secondAttribute="leading" constant="12" id="xgo-Sr-lhe"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="detailLabel" destination="Eys-Xg-2wa" id="hyD-G6-lbk"/>
-                                    <outlet property="titleLabel" destination="9Th-yV-zhg" id="bJc-aE-r45"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="xLy-Gl-qir" id="p4O-P2-eCb"/>
                             <outlet property="delegate" destination="xLy-Gl-qir" id="BCn-ub-Hq9"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Posts" image="posts" id="XJS-8x-cVZ"/>
                     <navigationItem key="navigationItem" title="Reddit" leftItemsSupplementBackButton="YES" id="5wT-HF-OsN"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="pPG-Fq-zfu" id="wc6-ic-boh"/>
@@ -129,25 +81,60 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waQ-x0-Dgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1883" y="-324"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Qyk-ne-pdx">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NKI-mL-jr9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="FLS-Vx-NbD"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Ng-Yi-phT">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xLy-Gl-qir" kind="relationship" relationship="viewControllers" id="zNU-Q7-qAF"/>
+                        <segue destination="EAW-xD-G2a" kind="relationship" relationship="viewControllers" id="8Bh-Ma-tuj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vja-LH-3wI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="k0b-vg-zdM">
+        <!--Favorites-->
+        <scene sceneID="KLa-VA-9Ov">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Pn-2J-4Ak" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="9Fo-Zd-heW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xLy-Gl-qir" kind="relationship" relationship="rootViewController" id="C7c-Q6-fXe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Md5-gC-Y3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="EAW-xD-G2a" customClass="FavoritesViewController" customModule="Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pdO-p7-ohd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qIq-9C-fPs">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qIq-9C-fPs" id="zx8-S6-I3K">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EAW-xD-G2a" id="MyH-EY-Zqf"/>
+                            <outlet property="delegate" destination="EAW-xD-G2a" id="MPj-tg-jTi"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" id="SsD-6a-vuJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="64n-OZ-z8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39" y="21"/>
+            <point key="canvasLocation" x="1877" y="343"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="27" height="25"/>
+        <image name="posts" width="27" height="27"/>
+    </resources>
 </document>

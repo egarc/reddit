@@ -11,4 +11,7 @@ protocol PostItemViewModelProtocol {
     /// The state for the post item cell to render.
     var state: PostItemState { get }
 
+    /// Called when fav button tapped.
+    func postItemViewModelDidTapFavoriteButton()
+
 }
