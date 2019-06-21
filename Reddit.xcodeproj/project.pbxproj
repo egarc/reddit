@@ -132,24 +132,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		3B340FC32290657C007DA268 /* XIB */ = {
+		3B340FC9229069DE007DA268 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
 				3BFA969A228F756200A02CC4 /* Main.storyboard */,
-				3B34100122964E89007DA268 /* PostItemCell.xib */,
 			);
 			path = XIB;
-			sourceTree = "<group>";
-		};
-		3B340FC9229069DE007DA268 /* Posts */ = {
-			isa = PBXGroup;
-			children = (
-				3B340FE622963D5C007DA268 /* Favorites */,
-				3B340FCB229069F9007DA268 /* PostItem */,
-				3B340FCA229069F5007DA268 /* Posts */,
-				3B340FC32290657C007DA268 /* XIB */,
-			);
-			path = Posts;
 			sourceTree = "<group>";
 		};
 		3B340FCA229069F5007DA268 /* Posts */ = {
@@ -170,6 +158,7 @@
 				3B340FD622906D0E007DA268 /* State */,
 				3B340FCC22906A41007DA268 /* ViewModels */,
 				3B340FCD22906A47007DA268 /* Views */,
+				3B93C1D722BD461E00322AD8 /* XIB */,
 			);
 			path = PostItem;
 			sourceTree = "<group>";
@@ -246,6 +235,50 @@
 			path = State;
 			sourceTree = "<group>";
 		};
+		3B93C1D422BD45D600322AD8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3B340FCA229069F5007DA268 /* Posts */,
+				3B340FE622963D5C007DA268 /* Favorites */,
+				3B340FC9229069DE007DA268 /* XIB */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3B93C1D522BD45DB00322AD8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA9696228F756200A02CC4 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3B93C1D622BD460500322AD8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3B340FCB229069F9007DA268 /* PostItem */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3B93C1D722BD461E00322AD8 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				3B34100122964E89007DA268 /* PostItemCell.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		3B93C1D822BD467F00322AD8 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA96A2228F756300A02CC4 /* Info.plist */,
+				3BFA969F228F756300A02CC4 /* LaunchScreen.storyboard */,
+				3BFA969D228F756300A02CC4 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		3BFA968A228F756200A02CC4 = {
 			isa = PBXGroup;
 			children = (
@@ -267,11 +300,10 @@
 		3BFA9695228F756200A02CC4 /* Reddit */ = {
 			isa = PBXGroup;
 			children = (
-				3B340FC9229069DE007DA268 /* Posts */,
-				3BFA9696228F756200A02CC4 /* AppDelegate.swift */,
-				3BFA969D228F756300A02CC4 /* Assets.xcassets */,
-				3BFA969F228F756300A02CC4 /* LaunchScreen.storyboard */,
-				3BFA96A2228F756300A02CC4 /* Info.plist */,
+				3B93C1D522BD45DB00322AD8 /* App */,
+				3B93C1D622BD460500322AD8 /* Components */,
+				3B93C1D422BD45D600322AD8 /* Scenes */,
+				3B93C1D822BD467F00322AD8 /* SupportingFiles */,
 			);
 			path = Reddit;
 			sourceTree = "<group>";
@@ -590,7 +622,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZB94DQKJUS;
-				INFOPLIST_FILE = reddit/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Reddit/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,7 +640,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZB94DQKJUS;
-				INFOPLIST_FILE = reddit/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Reddit/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
