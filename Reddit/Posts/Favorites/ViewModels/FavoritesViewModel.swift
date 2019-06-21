@@ -7,27 +7,26 @@
 //
 
 import UIKit
+import Common
 
-final class FavoritesViewModel {
+final class FavoritesViewModel: ViewModel<FavoritesViewState> {
 
     // MARK: -
     // MARK: Private Properties
 
     private let store: FavoritesStore
 
-    private var viewState: FavoritesViewState
-
-    // MARK: -
-    // MARK: Public Properties
-
-    weak var delegate: FavoritesViewModelDelegate? = nil
-
     // MARK: -
     // MARK: Initialization
 
     init(store: FavoritesStore) {
         self.store = store
-        self.viewState = FavoritesViewState(cellViewModels: [])
+
+        super.init(initialState: FavoritesViewState(cellViewModels: []))
+
+        subscribe(to: store) { [weak self] in
+            self?.processDomainStateChange(state: $0)
+        }
     }
     
 }
@@ -42,21 +41,25 @@ extension FavoritesViewModel: FavoritesViewModelProtocol {
     }
 
     func numberOfItems(inSection section: Int) -> Int {
-        return viewState.cellViewModels.count
+        return state.cellViewModels.count
     }
 
     func itemViewModel(at indexPath: IndexPath) -> PostItemViewModelProtocol {
-        return viewState.cellViewModels[indexPath.row]
+        return state.cellViewModels[indexPath.row]
     }
 
 }
 
 // MARK: -
-// MARK: FavoritesStoreDelegate
+// MARK: State Changes
 
-extension FavoritesViewModel: FavoritesStoreDelegate {
+private extension FavoritesViewModel {
 
-    func didUpdateWithState(_ state: FavoritesState) {
+    /// Translates `FavoritesState` into `FavoritesViewState` and updates
+    /// self's state.
+    ///
+    /// - Parameter state: The `FavoritesState` to process.
+    func processDomainStateChange(state: FavoritesState) {
         let cellViewModels = state.posts?.compactMap {
             PostItemViewModel(
                 post: $0,
@@ -65,8 +68,7 @@ extension FavoritesViewModel: FavoritesStoreDelegate {
                 delegate: self)
         }
 
-        self.viewState = FavoritesViewState(cellViewModels: cellViewModels ?? [])
-        delegate?.didUpdateWithState(self.viewState)
+        write { self.state = FavoritesViewState(cellViewModels: cellViewModels ?? []) }
     }
 
 }

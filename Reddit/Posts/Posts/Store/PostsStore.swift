@@ -7,20 +7,14 @@
 //
 
 import Alamofire
+import Common
 
-class PostsStore {
+class PostsStore: Store<PostsState> {
 
     // MARK: -
     // MARK: Private Properties
 
-    private var state: PostsState
-
     private let favoritesStore: FavoritesStore
-
-    // MARK: -
-    // MARK: Public Properties
-
-    weak var delegate: PostsStoreDelegate? = nil
 
     // MARK: -
     // MARK: Initialization
@@ -28,15 +22,12 @@ class PostsStore {
     init(favoritesStore: FavoritesStore) {
         self.favoritesStore = favoritesStore
 
-        let favorites = favoritesStore.fetchFavorites().map { $0.value.id }
-        self.state = PostsState(
+        super.init(initialState: PostsState(
             subreddit: nil,
             requestState: .idle,
-            favorites: favorites)
+            favorites: []))
 
-        DispatchQueue.main.async {
-            self.delegate?.didUpdateWithState(self.state)
-        }
+        subscribeToChildStores()
     }
 
 }
@@ -47,29 +38,25 @@ class PostsStore {
 extension PostsStore: PostsStoreCommands {
 
     func fetchPosts(from subreddit: String?) {
-        var newState = self.state
-        newState.subreddit = subreddit
-        newState.requestState = .loading
-        self.state = newState
-
-        DispatchQueue.main.async {
-            self.delegate?.didUpdateWithState(newState)
+        write {
+            var newState = self.state
+            newState.subreddit = subreddit
+            newState.requestState = .loading
+            self.state = newState
         }
 
         AF.request(Requests.subreddit(subreddit)).responseDecodable { [weak self] (response: DataResponse<Page>) in
             guard let self = self else { return }
-
-            var newState = self.state
-            switch response.result {
-            case .success(let page):
-                newState.requestState = .success(page.posts)
-            case .failure(let error):
-                newState.requestState = .failure(error)
-            }
-            self.state = newState
             
-            DispatchQueue.main.async {
-                self.delegate?.didUpdateWithState(newState)
+            self.write {
+                var newState = self.state
+                switch response.result {
+                case .success(let page):
+                    newState.requestState = .success(page.posts)
+                case .failure(let error):
+                    newState.requestState = .failure(error)
+                }
+                self.state = newState
             }
         }
     }
@@ -89,19 +76,15 @@ extension PostsStore: PostsStoreCommands {
 }
 
 // MARK: -
-// MARK: FavoritesStoreDelegate
+// MARK: Private Helpers
 
-extension PostsStore: FavoritesStoreDelegate {
+private extension PostsStore {
 
-    func didUpdateWithState(_ state: FavoritesState) {
-        var newState = self.state
-        newState.favorites = state.posts?.compactMap { $0.id }
-        self.state = newState
-
-        self.delegate?.didUpdateWithState(newState)
+    /// Subscribes to the recent searches store to observe the recent searches
+    func subscribeToChildStores() {
+        subscribe(to: favoritesStore) { [weak self] state in
+            self?.write { self?.state.favorites = state.posts?.compactMap { $0.id } }
+        }
     }
 
 }
-
-
-

@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import Common
 
 class PostsViewController: UITableViewController {
 
@@ -24,6 +25,7 @@ class PostsViewController: UITableViewController {
         
         setupView()
         viewModel?.fetchFrontPage()
+        viewModel?.subscribe(from: self)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -125,11 +127,11 @@ extension PostsViewController: UITextFieldDelegate {
 }
 
 // MARK: -
-// MARK: PostsViewModelDelegate
+// MARK: StatefulView
 
-extension PostsViewController: PostsViewModelDelegate {
+extension PostsViewController: StatefulView {
 
-    func didUpdateWithState(_ state: PostsViewState) {
+    func render(state: PostsViewState) {
         if state.isLoading {
             activityIndicatorView?.startAnimating()
             tableView.refreshControl?.beginRefreshing()

@@ -27,19 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let postsViewController = tabBarController.viewControllers?.first as! PostsViewController
         postsViewController.viewModel = postsViewModel
 
-        postsStore.delegate = postsViewModel
-        favoritesStore.delegate = postsStore
-        postsViewModel.delegate = postsViewController
-
         // Favorites
-        // TODO: Switch to subscription and we can reuse the first favorites store
-        let anotherFavoritesStore = FavoritesStore()
-        let favoritesViewModel = FavoritesViewModel(store: anotherFavoritesStore)
+        let favoritesViewModel = FavoritesViewModel(store: favoritesStore)
         let favoritesViewController = tabBarController.viewControllers?[1] as! FavoritesViewController
         favoritesViewController.viewModel = favoritesViewModel
-
-        anotherFavoritesStore.delegate = favoritesViewModel
-        favoritesViewModel.delegate = favoritesViewController
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()

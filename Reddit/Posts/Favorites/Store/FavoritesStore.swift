@@ -7,26 +7,20 @@
 //
 
 import UIKit
+import Common
 
-class FavoritesStore {
+class FavoritesStore: Store<FavoritesState> {
 
     // MARK: -
     // MARK: Private Properties
 
     fileprivate let favoritesKey = "favorites"
 
-    private var state: FavoritesState
-    
-    // MARK: -
-    // MARK: Public Properties
-
-    weak var delegate: FavoritesStoreDelegate? = nil
-
     // MARK: -
     // MARK: Initialization
 
     init() {
-        self.state = FavoritesState()
+        super.init(initialState: FavoritesState(posts: []))
     }
     
 }
@@ -43,10 +37,11 @@ extension FavoritesStore: FavoritesStoreCommands {
                 return [:]
         }
 
-        var newState = self.state
-        newState.posts = Array(favorites.values)
-        self.state = newState
-        self.delegate?.didUpdateWithState(newState)
+        write {
+            var newState = self.state
+            newState.posts = Array(favorites.values)
+            self.state = newState
+        }
 
         return favorites
     }
@@ -62,13 +57,10 @@ extension FavoritesStore: FavoritesStoreCommands {
 
         do {
             UserDefaults.standard.set(try PropertyListEncoder().encode(favorites), forKey: favoritesKey)
-
-            var newState = self.state
-            newState.posts = Array(favorites.values)
-            self.state = newState
-
-            DispatchQueue.main.async {
-                self.delegate?.didUpdateWithState(newState)
+            write {
+                var newState = self.state
+                newState.posts = Array(favorites.values)
+                self.state = newState
             }
         } catch {
             print(error.localizedDescription)

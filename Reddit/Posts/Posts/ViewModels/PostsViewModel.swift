@@ -7,29 +7,28 @@
 //
 
 import Foundation
+import Common
 
-final class PostsViewModel {
+final class PostsViewModel: ViewModel<PostsViewState> {
 
     // MARK: -
     // MARK: Private Properties
 
     private let store: PostsStore
 
-    private var viewState: PostsViewState
-
-    // MARK: -
-    // MARK: Public Properties
-
-    weak var delegate: PostsViewModelDelegate? = nil
-
     // MARK: -
     // MARK: Initialization
 
     init(store: PostsStore) {
         self.store = store
-        self.viewState = PostsViewState(
+
+        super.init(initialState: PostsViewState(
             cellViewModels: [],
-            isLoading: false)
+            isLoading: false))
+
+        subscribe(to: store) { [weak self] in
+            self?.processDomainStateChange(state: $0)
+        }
     }
 
 }
@@ -56,21 +55,25 @@ extension PostsViewModel: PostsViewModelProtocol {
     }
 
     func numberOfItems(inSection section: Int) -> Int {
-        return viewState.cellViewModels.count
+        return state.cellViewModels.count
     }
 
     func itemViewModel(at indexPath: IndexPath) -> PostItemViewModelProtocol {
-        return viewState.cellViewModels[indexPath.row]
+        return state.cellViewModels[indexPath.row]
     }
 
 }
 
 // MARK: -
-// MARK: PostsStoreDelegate
+// MARK: State Changes
 
-extension PostsViewModel: PostsStoreDelegate {
+private extension PostsViewModel {
 
-    func didUpdateWithState(_ state: PostsState) {
+    /// Translates `PostsState` into `PostsViewState` and updates
+    /// self's state.
+    ///
+    /// - Parameter state: The `PostsState` to process.
+    func processDomainStateChange(state: PostsState) {
         let showAuthor = !(state.subreddit?.isEmpty ?? true)
         let cellViewModels = state.requestState.items?.compactMap {
             PostItemViewModel(
@@ -80,11 +83,11 @@ extension PostsViewModel: PostsStoreDelegate {
                 delegate: self)
         }
 
-        self.viewState = PostsViewState(
+        let newState = PostsViewState(
             cellViewModels: cellViewModels ?? [],
             isLoading: state.requestState == .loading)
-        
-        delegate?.didUpdateWithState(self.viewState)
+
+        write { self.state = newState }
     }
 
 }

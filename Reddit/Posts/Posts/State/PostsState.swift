@@ -7,8 +7,9 @@
 //
 
 import Alamofire
+import Common
 
-struct PostsState {
+struct PostsState: DomainState {
 
     /// The subreddit that the user has entered.
     var subreddit: String?
@@ -30,6 +31,23 @@ extension PostsState: Equatable {
         return lhs.subreddit == rhs.subreddit
             && lhs.requestState == rhs.requestState
             && lhs.favorites == rhs.favorites
+    }
+
+}
+
+// MARK: -
+// MARK: Loggable
+
+extension PostsState: Loggable {
+
+    var logDescription: String {
+        return """
+        PostsState {
+            subreddit: \(String(describing: subreddit)),
+            requestState: \(requestState),
+            favorites: \(String(describing: favorites)),
+        }
+        """
     }
 
 }

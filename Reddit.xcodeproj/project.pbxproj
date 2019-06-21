@@ -13,15 +13,12 @@
 		3B340FB2228FC55D007DA268 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FB1228FC55D007DA268 /* Post.swift */; };
 		3B340FB9228FC8C9007DA268 /* PostsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FB8228FC8C9007DA268 /* PostsStore.swift */; };
 		3B340FBC228FCAA4007DA268 /* PostsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FBB228FCAA4007DA268 /* PostsState.swift */; };
-		3B340FBE228FCB90007DA268 /* PostsStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FBD228FCB90007DA268 /* PostsStoreDelegate.swift */; };
 		3B340FC0229064FF007DA268 /* PostsStoreCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FBF229064FF007DA268 /* PostsStoreCommands.swift */; };
-		3B340FC622906876007DA268 /* PostsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FC522906876007DA268 /* PostsViewState.swift */; };
 		3B340FC822906964007DA268 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FC722906964007DA268 /* PostsViewModel.swift */; };
 		3B340FD122906B44007DA268 /* PostItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FD022906B44007DA268 /* PostItemViewModel.swift */; };
 		3B340FD522906B94007DA268 /* PostItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FD422906B94007DA268 /* PostItemCell.swift */; };
 		3B340FD822906D17007DA268 /* PostItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FD722906D17007DA268 /* PostItemState.swift */; };
 		3B340FDA22906E74007DA268 /* PostItemViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FD922906E74007DA268 /* PostItemViewModelProtocol.swift */; };
-		3B340FDC2290753A007DA268 /* PostsViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FDB2290753A007DA268 /* PostsViewModelDelegate.swift */; };
 		3B340FDE22907995007DA268 /* PostsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FDD22907995007DA268 /* PostsViewModelProtocol.swift */; };
 		3B340FE022911A24007DA268 /* NetworkRequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FDF22911A24007DA268 /* NetworkRequestState.swift */; };
 		3B340FE52295ED99007DA268 /* PostItemViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FE42295ED99007DA268 /* PostItemViewModelDelegate.swift */; };
@@ -31,10 +28,9 @@
 		3B340FF22296403A007DA268 /* FavoritesViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FF12296403A007DA268 /* FavoritesViewState.swift */; };
 		3B340FF4229640BE007DA268 /* FavoritesStoreCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FF3229640BE007DA268 /* FavoritesStoreCommands.swift */; };
 		3B340FF6229641D1007DA268 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FF5229641D1007DA268 /* FavoritesViewModel.swift */; };
-		3B340FFC2296464E007DA268 /* FavoritesStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FFB2296464E007DA268 /* FavoritesStoreDelegate.swift */; };
-		3B340FFE22964B0D007DA268 /* FavoritesViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FFD22964B0D007DA268 /* FavoritesViewModelDelegate.swift */; };
 		3B34100022964B27007DA268 /* FavoritesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FFF22964B27007DA268 /* FavoritesViewModelProtocol.swift */; };
 		3B34100222964E89007DA268 /* PostItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B34100122964E89007DA268 /* PostItemCell.xib */; };
+		3BD93FE122A31B8C00F52519 /* PostsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD93FE022A31B8C00F52519 /* PostsViewState.swift */; };
 		3BFA9697228F756200A02CC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA9696228F756200A02CC4 /* AppDelegate.swift */; };
 		3BFA9699228F756200A02CC4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA9698228F756200A02CC4 /* PostsViewController.swift */; };
 		3BFA969C228F756200A02CC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BFA969A228F756200A02CC4 /* Main.storyboard */; };
@@ -48,15 +44,12 @@
 		3B340FB1228FC55D007DA268 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3B340FB8228FC8C9007DA268 /* PostsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsStore.swift; sourceTree = "<group>"; };
 		3B340FBB228FCAA4007DA268 /* PostsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsState.swift; sourceTree = "<group>"; };
-		3B340FBD228FCB90007DA268 /* PostsStoreDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsStoreDelegate.swift; sourceTree = "<group>"; };
 		3B340FBF229064FF007DA268 /* PostsStoreCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsStoreCommands.swift; sourceTree = "<group>"; };
-		3B340FC522906876007DA268 /* PostsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewState.swift; sourceTree = "<group>"; };
 		3B340FC722906964007DA268 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		3B340FD022906B44007DA268 /* PostItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemViewModel.swift; sourceTree = "<group>"; };
 		3B340FD422906B94007DA268 /* PostItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemCell.swift; sourceTree = "<group>"; };
 		3B340FD722906D17007DA268 /* PostItemState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemState.swift; sourceTree = "<group>"; };
 		3B340FD922906E74007DA268 /* PostItemViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemViewModelProtocol.swift; sourceTree = "<group>"; };
-		3B340FDB2290753A007DA268 /* PostsViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelDelegate.swift; sourceTree = "<group>"; };
 		3B340FDD22907995007DA268 /* PostsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelProtocol.swift; sourceTree = "<group>"; };
 		3B340FDF22911A24007DA268 /* NetworkRequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestState.swift; sourceTree = "<group>"; };
 		3B340FE42295ED99007DA268 /* PostItemViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemViewModelDelegate.swift; sourceTree = "<group>"; };
@@ -66,10 +59,9 @@
 		3B340FF12296403A007DA268 /* FavoritesViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewState.swift; sourceTree = "<group>"; };
 		3B340FF3229640BE007DA268 /* FavoritesStoreCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStoreCommands.swift; sourceTree = "<group>"; };
 		3B340FF5229641D1007DA268 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
-		3B340FFB2296464E007DA268 /* FavoritesStoreDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStoreDelegate.swift; sourceTree = "<group>"; };
-		3B340FFD22964B0D007DA268 /* FavoritesViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelDelegate.swift; sourceTree = "<group>"; };
 		3B340FFF22964B27007DA268 /* FavoritesViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelProtocol.swift; sourceTree = "<group>"; };
 		3B34100122964E89007DA268 /* PostItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostItemCell.xib; sourceTree = "<group>"; };
+		3BD93FE022A31B8C00F52519 /* PostsViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewState.swift; sourceTree = "<group>"; };
 		3BFA9693228F756200A02CC4 /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFA9696228F756200A02CC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BFA9698228F756200A02CC4 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				3B340FB8228FC8C9007DA268 /* PostsStore.swift */,
-				3B340FBD228FCB90007DA268 /* PostsStoreDelegate.swift */,
 				3B340FBF229064FF007DA268 /* PostsStoreCommands.swift */,
 			);
 			path = Store;
@@ -119,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				3B340FBB228FCAA4007DA268 /* PostsState.swift */,
-				3B340FC522906876007DA268 /* PostsViewState.swift */,
+				3BD93FE022A31B8C00F52519 /* PostsViewState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -128,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				3B340FC722906964007DA268 /* PostsViewModel.swift */,
-				3B340FDB2290753A007DA268 /* PostsViewModelDelegate.swift */,
 				3B340FDD22907995007DA268 /* PostsViewModelProtocol.swift */,
 			);
 			path = ViewModels;
@@ -226,7 +216,6 @@
 			children = (
 				3B340FED22963FF1007DA268 /* FavoritesStore.swift */,
 				3B340FF3229640BE007DA268 /* FavoritesStoreCommands.swift */,
-				3B340FFB2296464E007DA268 /* FavoritesStoreDelegate.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -235,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				3B340FF5229641D1007DA268 /* FavoritesViewModel.swift */,
-				3B340FFD22964B0D007DA268 /* FavoritesViewModelDelegate.swift */,
 				3B340FFF22964B27007DA268 /* FavoritesViewModelProtocol.swift */,
 			);
 			path = ViewModels;
@@ -407,12 +395,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Reddit/Pods-Reddit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Common/Common.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Common.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -433,23 +423,19 @@
 				3BFA9699228F756200A02CC4 /* PostsViewController.swift in Sources */,
 				3B340FF6229641D1007DA268 /* FavoritesViewModel.swift in Sources */,
 				3B340FDE22907995007DA268 /* PostsViewModelProtocol.swift in Sources */,
-				3B340FC622906876007DA268 /* PostsViewState.swift in Sources */,
 				3B340FC0229064FF007DA268 /* PostsStoreCommands.swift in Sources */,
 				3B340FF22296403A007DA268 /* FavoritesViewState.swift in Sources */,
 				3BFA9697228F756200A02CC4 /* AppDelegate.swift in Sources */,
 				3B340FD822906D17007DA268 /* PostItemState.swift in Sources */,
 				3B34100022964B27007DA268 /* FavoritesViewModelProtocol.swift in Sources */,
 				3B340FE022911A24007DA268 /* NetworkRequestState.swift in Sources */,
-				3B340FFE22964B0D007DA268 /* FavoritesViewModelDelegate.swift in Sources */,
-				3B340FDC2290753A007DA268 /* PostsViewModelDelegate.swift in Sources */,
 				3B340FF4229640BE007DA268 /* FavoritesStoreCommands.swift in Sources */,
 				3B340FB9228FC8C9007DA268 /* PostsStore.swift in Sources */,
-				3B340FFC2296464E007DA268 /* FavoritesStoreDelegate.swift in Sources */,
 				3B340FB0228FC52D007DA268 /* Page.swift in Sources */,
 				3B340FD522906B94007DA268 /* PostItemCell.swift in Sources */,
 				3B340FBC228FCAA4007DA268 /* PostsState.swift in Sources */,
 				3B340FD122906B44007DA268 /* PostItemViewModel.swift in Sources */,
-				3B340FBE228FCB90007DA268 /* PostsStoreDelegate.swift in Sources */,
+				3BD93FE122A31B8C00F52519 /* PostsViewState.swift in Sources */,
 				3B340FC822906964007DA268 /* PostsViewModel.swift in Sources */,
 				3B340FEC22963EC1007DA268 /* FavoritesViewController.swift in Sources */,
 				3B340FB2228FC55D007DA268 /* Post.swift in Sources */,
@@ -603,7 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S5WP5U9268;
+				DEVELOPMENT_TEAM = ZB94DQKJUS;
 				INFOPLIST_FILE = reddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -621,7 +607,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S5WP5U9268;
+				DEVELOPMENT_TEAM = ZB94DQKJUS;
 				INFOPLIST_FILE = reddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

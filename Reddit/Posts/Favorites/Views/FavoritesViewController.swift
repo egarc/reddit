@@ -8,20 +8,23 @@
 
 import UIKit
 import SafariServices
+import Common
 
 class FavoritesViewController: UITableViewController {
 
     // MARK: -
     // MARK: Public Properties
 
-    var viewModel: FavoritesViewModelProtocol?
+    var viewModel: FavoritesViewModel?
 
     // MARK: -
     // MARK: View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
+        viewModel?.subscribe(from: self)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -91,9 +94,9 @@ private extension FavoritesViewController {
 // MARK: -
 // MARK: FavoritesViewModelDelegate
 
-extension FavoritesViewController: FavoritesViewModelDelegate {
+extension FavoritesViewController: StatefulView {
 
-    func didUpdateWithState(_ state: FavoritesViewState) {
+    func render(state: FavoritesViewState) {
         tableView.reloadData()
     }
 
