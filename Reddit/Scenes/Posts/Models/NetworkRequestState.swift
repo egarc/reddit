@@ -6,8 +6,6 @@
 //  Copyright © 2019 Eric Garcia. All rights reserved.
 //
 
-import Alamofire
-
 enum NetworkRequestState<T: Equatable> {
 
     case idle

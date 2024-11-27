@@ -6,9 +6,9 @@
 //  Copyright © 2019 Eric Garcia. All rights reserved.
 //
 
-import Alamofire
+import Foundation
 
-enum Requests: URLRequestConvertible {
+enum Requests {
 
     // A subreddit request e.g. "r/news".
     case subreddit(String?)

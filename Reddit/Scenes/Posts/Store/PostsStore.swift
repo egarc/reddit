@@ -6,7 +6,6 @@
 //  Copyright © 2019 Eric Garcia. All rights reserved.
 //
 
-import Alamofire
 import Common
 
 class PostsStore: Store<PostsState> {
@@ -37,32 +36,30 @@ class PostsStore: Store<PostsState> {
 
 extension PostsStore: PostsStoreCommands {
 
-    func fetchPosts(from subreddit: String?) {
+    func fetchPosts(from subreddit: String?) async {
         write {
             var newState = self.state
             newState.subreddit = subreddit
             newState.requestState = .loading
             self.state = newState
         }
-
-        AF.request(Requests.subreddit(subreddit)).responseDecodable { [weak self] (response: DataResponse<Page>) in
-            guard let self = self else { return }
-            
-            self.write {
-                var newState = self.state
-                switch response.result {
-                case .success(let page):
-                    newState.requestState = .success(page.posts)
-                case .failure(let error):
-                    newState.requestState = .failure(error)
-                }
-                self.state = newState
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(for: Requests.subreddit(subreddit).asURLRequest())
+            let decoder = JSONDecoder()
+            let page = try decoder.decode(Page.self, from: data)
+            write {
+                self.state.requestState = .success(page.posts)
+            }
+        } catch let error {
+            write {
+                self.state.requestState = .failure(error)
             }
         }
     }
 
-    func refreshPosts() {
-        fetchPosts(from: state.subreddit)
+    func refreshPosts() async {
+        await fetchPosts(from: state.subreddit)
     }
 
     func fetchFavorites() {

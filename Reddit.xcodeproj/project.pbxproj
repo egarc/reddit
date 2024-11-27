@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,7 @@
 		3B34100022964B27007DA268 /* FavoritesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FFF22964B27007DA268 /* FavoritesViewModelProtocol.swift */; };
 		3B34100222964E89007DA268 /* PostItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B34100122964E89007DA268 /* PostItemCell.xib */; };
 		3BD93FE122A31B8C00F52519 /* PostsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD93FE022A31B8C00F52519 /* PostsViewState.swift */; };
+		3BEE70622CD288D600C61B0D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE70612CD288D600C61B0D /* AppCoordinator.swift */; };
 		3BFA9697228F756200A02CC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA9696228F756200A02CC4 /* AppDelegate.swift */; };
 		3BFA9699228F756200A02CC4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA9698228F756200A02CC4 /* PostsViewController.swift */; };
 		3BFA969C228F756200A02CC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BFA969A228F756200A02CC4 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		3B340FFF22964B27007DA268 /* FavoritesViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelProtocol.swift; sourceTree = "<group>"; };
 		3B34100122964E89007DA268 /* PostItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostItemCell.xib; sourceTree = "<group>"; };
 		3BD93FE022A31B8C00F52519 /* PostsViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewState.swift; sourceTree = "<group>"; };
+		3BEE70612CD288D600C61B0D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3BFA9693228F756200A02CC4 /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFA9696228F756200A02CC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BFA9698228F756200A02CC4 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				3BFA9696228F756200A02CC4 /* AppDelegate.swift */,
+				3BEE70612CD288D600C61B0D /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -353,8 +356,9 @@
 		3BFA968B228F756200A02CC4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1600;
 				ORGANIZATIONNAME = "Eric Garcia";
 				TargetAttributes = {
 					3BFA9692228F756200A02CC4 = {
@@ -423,22 +427,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Reddit/Pods-Reddit-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Common/Common.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Reddit/Pods-Reddit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Common.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Reddit/Pods-Reddit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Reddit/Pods-Reddit-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reddit/Pods-Reddit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -450,6 +447,7 @@
 			files = (
 				3B340FAE228FA901007DA268 /* Requests.swift in Sources */,
 				3B340FE52295ED99007DA268 /* PostItemViewModelDelegate.swift in Sources */,
+				3BEE70622CD288D600C61B0D /* AppCoordinator.swift in Sources */,
 				3B340FDA22906E74007DA268 /* PostItemViewModelProtocol.swift in Sources */,
 				3B340FEE22963FF1007DA268 /* FavoritesStore.swift in Sources */,
 				3BFA9699228F756200A02CC4 /* PostsViewController.swift in Sources */,
@@ -523,6 +521,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -534,6 +533,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -585,6 +585,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -596,6 +597,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -623,6 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZB94DQKJUS;
 				INFOPLIST_FILE = "$(SRCROOT)/Reddit/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -641,6 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZB94DQKJUS;
 				INFOPLIST_FILE = "$(SRCROOT)/Reddit/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

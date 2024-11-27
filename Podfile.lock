@@ -1,23 +1,16 @@
 PODS:
-  - Alamofire (5.0.0-beta.6)
   - Common (1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.0.0-beta.5)
   - Common (from `../Common`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Alamofire
 
 EXTERNAL SOURCES:
   Common:
     :path: "../Common"
 
 SPEC CHECKSUMS:
-  Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
-  Common: fd5ec49170ef375591c98b5de8b42945766d3057
+  Common: 8c04acf9cb7e61ea0ad8347a88a3f463547b61ff
 
-PODFILE CHECKSUM: a8a0d631fd6e54dfd18d8fff9c78f32def441c66
+PODFILE CHECKSUM: 62493d032988d5e501e101cb2870b777ee5f402d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.16.1

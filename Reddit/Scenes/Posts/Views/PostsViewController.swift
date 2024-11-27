@@ -24,8 +24,11 @@ class PostsViewController: UITableViewController {
         super.viewDidLoad()
         
         setupView()
-        viewModel?.fetchFrontPage()
         viewModel?.subscribe(from: self)
+        
+        Task {
+            await viewModel?.fetchFrontPage()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +49,9 @@ class PostsViewController: UITableViewController {
     // MARK: IBActions
     
     @objc func refreshPosts() {
-        viewModel?.refreshPosts()
+        Task {
+            await viewModel?.refreshPosts()
+        }
     }
 
 }
@@ -119,7 +124,9 @@ private extension PostsViewController {
 extension PostsViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        viewModel?.fetchPosts(from: textField.text ?? "")
+        Task {
+            await viewModel?.fetchPosts(from: textField.text ?? "")
+        }
         textField.resignFirstResponder()
         return true
     }

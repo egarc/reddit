@@ -11,10 +11,10 @@ protocol PostsStoreCommands {
     /// Fetches posts from a given subreddit. If no subreddit is specfied, the front page is fetched.
     ///
     /// - Parameter subreddit: The name of the subreddit.
-    func fetchPosts(from subreddit: String?)
+    func fetchPosts(from subreddit: String?) async
 
     /// Refreshes the current posts.
-    func refreshPosts()
+    func refreshPosts() async
 
     /// Fetches the favorite posts.
     func fetchFavorites()

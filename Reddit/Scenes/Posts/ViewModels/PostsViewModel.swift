@@ -38,16 +38,16 @@ final class PostsViewModel: ViewModel<PostsViewState> {
 
 extension PostsViewModel: PostsViewModelProtocol {
 
-    func fetchFrontPage() {
-        store.fetchPosts(from: nil)
+    func fetchFrontPage() async {
+        await store.fetchPosts(from: nil)
     }
 
-    func fetchPosts(from subreddit: String) {
-        store.fetchPosts(from: subreddit)
+    func fetchPosts(from subreddit: String) async {
+        await store.fetchPosts(from: subreddit)
     }
 
-    func refreshPosts() {
-        store.refreshPosts()
+    func refreshPosts() async {
+        await store.refreshPosts()
     }
 
     func fetchFavorites() {

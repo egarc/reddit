@@ -11,15 +11,15 @@ import Foundation
 protocol PostsViewModelProtocol {
 
     /// Fetches the front page.
-    func fetchFrontPage()
+    func fetchFrontPage() async
 
     /// Fetches the first page of the given subreddit.
     ///
     /// - Parameter subreddit: A subreddit name.
-    func fetchPosts(from subreddit: String)
+    func fetchPosts(from subreddit: String) async
 
     /// Refreshes the current posts.
-    func refreshPosts()
+    func refreshPosts() async
 
     /// Fetches the favorite posts.
     func fetchFavorites()

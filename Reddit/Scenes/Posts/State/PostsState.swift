@@ -6,7 +6,6 @@
 //  Copyright © 2019 Eric Garcia. All rights reserved.
 //
 
-import Alamofire
 import Common
 
 struct PostsState: DomainState {

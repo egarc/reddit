@@ -12,32 +12,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    var store: PostsStore?
+    
+    var appCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: PostsViewController.self))
-
-        // Posts
-        let favoritesStore = FavoritesStore()
-        let postsStore = PostsStore(favoritesStore: favoritesStore)
-        let postsViewModel = PostsViewModel(store: postsStore)
-        let tabBarController = storyboard.instantiateInitialViewController() as! UITabBarController
-        let postsViewController = tabBarController.viewControllers?.first as! PostsViewController
-        postsViewController.viewModel = postsViewModel
-
-        // Favorites
-        let favoritesViewModel = FavoritesViewModel(store: favoritesStore)
-        let favoritesViewController = tabBarController.viewControllers?[1] as! FavoritesViewController
-        favoritesViewController.viewModel = favoritesViewModel
-
+        self.appCoordinator = AppCoordinator()
+        
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
-        window.rootViewController = tabBarController
+        window.rootViewController = appCoordinator?.createRootViewController()
 
         self.window = window
-        self.store = postsStore
 
         return true
     }

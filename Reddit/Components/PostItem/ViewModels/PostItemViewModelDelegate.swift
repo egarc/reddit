@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PostItemViewModelDelegate: class {
+protocol PostItemViewModelDelegate: AnyObject {
 
     /// Called when the fav button is tapped.
     func postItemViewModelDidTapFavoriteButton(with post: Post)
