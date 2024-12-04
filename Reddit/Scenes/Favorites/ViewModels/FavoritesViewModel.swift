@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Common
+import MVVMC
 
 final class FavoritesViewModel: ViewModel<FavoritesViewState> {
 

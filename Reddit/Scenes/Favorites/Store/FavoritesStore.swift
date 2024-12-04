@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Common
+import MVVMC
 
 class FavoritesStore: Store<FavoritesState> {
 

@@ -6,7 +6,8 @@
 //  Copyright © 2019 Eric Garcia. All rights reserved.
 //
 
-import Common
+import MVVMC
+import UIKit
 
 class PostsStore: Store<PostsState> {
 

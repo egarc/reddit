@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Common
+import MVVMC
 
 final class PostsViewModel: ViewModel<PostsViewState> {
 

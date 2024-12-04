@@ -1,0 +1,15 @@
+{
+  "originHash" : "87ffa11c861125c517323e5be4143a4975dc50ba39857fa3480a038a453ae757",
+  "pins" : [
+    {
+      "identity" : "mvvmc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/egarc/MVVMC",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f1d0e2ab7b36abe13469975f3221ccc3d5097316"
+      }
+    }
+  ],
+  "version" : 3
+}

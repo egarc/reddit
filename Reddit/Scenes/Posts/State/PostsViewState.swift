@@ -1,5 +1,5 @@
 import Foundation
-import Common
+import MVVMC
 
 struct PostsViewState: ViewState {
     

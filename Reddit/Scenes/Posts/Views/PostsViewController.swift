@@ -8,7 +8,7 @@
 
 import UIKit
 import SafariServices
-import Common
+import MVVMC
 
 class PostsViewController: UITableViewController {
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03897142B416BDA0864DB00B /* Pods_Reddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBF64F607480283ACF536AC /* Pods_Reddit.framework */; };
 		3B340FAE228FA901007DA268 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FAD228FA901007DA268 /* Requests.swift */; };
 		3B340FB0228FC52D007DA268 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FAF228FC52D007DA268 /* Page.swift */; };
 		3B340FB2228FC55D007DA268 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FB1228FC55D007DA268 /* Post.swift */; };
@@ -30,6 +29,7 @@
 		3B340FF6229641D1007DA268 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FF5229641D1007DA268 /* FavoritesViewModel.swift */; };
 		3B34100022964B27007DA268 /* FavoritesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B340FFF22964B27007DA268 /* FavoritesViewModelProtocol.swift */; };
 		3B34100222964E89007DA268 /* PostItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B34100122964E89007DA268 /* PostItemCell.xib */; };
+		3B35F2262D00C32400FFB59D /* MVVMC in Frameworks */ = {isa = PBXBuildFile; productRef = 3B35F2252D00C32400FFB59D /* MVVMC */; };
 		3BD93FE122A31B8C00F52519 /* PostsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD93FE022A31B8C00F52519 /* PostsViewState.swift */; };
 		3BEE70622CD288D600C61B0D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE70612CD288D600C61B0D /* AppCoordinator.swift */; };
 		3BFA9697228F756200A02CC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA9696228F756200A02CC4 /* AppDelegate.swift */; };
@@ -71,9 +71,6 @@
 		3BFA969D228F756300A02CC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BFA96A0228F756300A02CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BFA96A2228F756300A02CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D6DC09C96F8D21CE0207B0E /* Pods-Reddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reddit/Pods-Reddit.release.xcconfig"; sourceTree = "<group>"; };
-		867137DB9024530DD28DABD8 /* Pods-Reddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reddit/Pods-Reddit.debug.xcconfig"; sourceTree = "<group>"; };
-		9EBF64F607480283ACF536AC /* Pods_Reddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03897142B416BDA0864DB00B /* Pods_Reddit.framework in Frameworks */,
+				3B35F2262D00C32400FFB59D /* MVVMC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,8 +284,6 @@
 			children = (
 				3BFA9695228F756200A02CC4 /* Reddit */,
 				3BFA9694228F756200A02CC4 /* Products */,
-				8C15AD5A5ADEB3ABADA67B0A /* Pods */,
-				BB50DCFA079005BC9DD8A1A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,23 +306,6 @@
 			path = Reddit;
 			sourceTree = "<group>";
 		};
-		8C15AD5A5ADEB3ABADA67B0A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				867137DB9024530DD28DABD8 /* Pods-Reddit.debug.xcconfig */,
-				3D6DC09C96F8D21CE0207B0E /* Pods-Reddit.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BB50DCFA079005BC9DD8A1A8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9EBF64F607480283ACF536AC /* Pods_Reddit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,11 +313,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3BFA96A5228F756300A02CC4 /* Build configuration list for PBXNativeTarget "Reddit" */;
 			buildPhases = (
-				99931284155A4BE2FE37ABB7 /* [CP] Check Pods Manifest.lock */,
 				3BFA968F228F756200A02CC4 /* Sources */,
 				3BFA9690228F756200A02CC4 /* Frameworks */,
 				3BFA9691228F756200A02CC4 /* Resources */,
-				BCC7EF420920593C823E6594 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -375,6 +351,9 @@
 				Base,
 			);
 			mainGroup = 3BFA968A228F756200A02CC4;
+			packageReferences = (
+				3B35F2242D00C32400FFB59D /* XCRemoteSwiftPackageReference "MVVMC" */,
+			);
 			productRefGroup = 3BFA9694228F756200A02CC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -397,48 +376,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		99931284155A4BE2FE37ABB7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reddit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BCC7EF420920593C823E6594 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reddit/Pods-Reddit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reddit/Pods-Reddit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reddit/Pods-Reddit-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3BFA968F228F756200A02CC4 /* Sources */ = {
@@ -619,7 +556,6 @@
 		};
 		3BFA96A6228F756300A02CC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 867137DB9024530DD28DABD8 /* Pods-Reddit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -638,7 +574,6 @@
 		};
 		3BFA96A7228F756300A02CC4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D6DC09C96F8D21CE0207B0E /* Pods-Reddit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -677,6 +612,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3B35F2242D00C32400FFB59D /* XCRemoteSwiftPackageReference "MVVMC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/egarc/MVVMC";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B35F2252D00C32400FFB59D /* MVVMC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B35F2242D00C32400FFB59D /* XCRemoteSwiftPackageReference "MVVMC" */;
+			productName = MVVMC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3BFA968B228F756200A02CC4 /* Project object */;
 }
